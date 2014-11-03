@@ -14,14 +14,15 @@ const void *XADCollectionViewKey = &XADCollectionViewKey;
 
 @implementation UICollectionViewController (XADPrivate)
 
--(UICollectionView*)collectionView
-{
-    if ([self.view isKindOfClass:[UICollectionView class]])
-        return (UICollectionView*)[self view];
-    
-    UICollectionView *collectionView = objc_getAssociatedObject(self, XADCollectionViewKey);
-    
-    return collectionView;
-}
+//-(UICollectionView*)collectionView
+//{
+//    UIView *view = self.view;
+//    if ([view isKindOfClass:[UICollectionView class]])
+//        return (UICollectionView*)[self view];
+//    
+//    UICollectionView *collectionView = objc_getAssociatedObject(self, XADCollectionViewKey);
+//    
+//    return collectionView;
+//}
 
 @end
