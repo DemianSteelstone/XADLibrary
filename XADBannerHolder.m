@@ -23,7 +23,7 @@
 {
     if (self = [super init])
     {
-        _banner = [[GADBannerView alloc] initWithAdSize:[self adSize:rootViewController.interfaceOrientation]];
+        _banner = [[GADBannerView alloc] initWithAdSize:[self adSize:[UIApplication sharedApplication].statusBarOrientation]];
         _banner.adUnitID = identifier;
         _banner.delegate = self;
         _banner.rootViewController = rootViewController;
