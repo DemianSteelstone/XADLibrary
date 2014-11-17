@@ -93,6 +93,7 @@
     if (_banner)
     {
         _banner.adSize = [self adSize:orientation];
+        [self updateFrames];
     }
 }
 
