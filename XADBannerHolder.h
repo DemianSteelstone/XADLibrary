@@ -21,4 +21,6 @@
 -(void)setFramesForLoadedBanner;
 -(void)setFramesForNotLoadedBanner;
 
+-(void)updateToOrientation:(UIInterfaceOrientation)orientation;
+
 @end

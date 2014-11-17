@@ -28,7 +28,7 @@
         _banner.delegate = self;
         _banner.rootViewController = rootViewController;
         
-        _banner.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        _banner.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
         
         [self addUpgradeNotification:notificationName];
     }
@@ -85,6 +85,14 @@
             [self setFramesForLoadedBanner];
         else
             [self setFramesForNotLoadedBanner];
+    }
+}
+
+-(void)updateToOrientation:(UIInterfaceOrientation)orientation
+{
+    if (_banner)
+    {
+        _banner.adSize = [self adSize:orientation];
     }
 }
 
