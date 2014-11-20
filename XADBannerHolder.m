@@ -146,8 +146,25 @@
 
     [UIView animateWithDuration:0.3
                      animations:^{
+                         [self willShowAnimated];
                          [self setFramesForLoadedBanner];
                      }];
+}
+
+-(void)willShowAnimated
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willAnimateShowBanner:)])
+    {
+        [self.delegate willAnimateShowBanner:self];
+    }
+}
+
+-(void)willHideAnimated
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willAnimateHideBanner:)])
+    {
+        [self.delegate willAnimateHideBanner:self];
+    }
 }
 
 - (void)adView:(GADBannerView *)bannerView
@@ -157,6 +174,7 @@ didFailToReceiveAdWithError:(GADRequestError *)error
     
     [UIView animateWithDuration:0.3
                      animations:^{
+                         [self willHideAnimated];
                          [self setFramesForNotLoadedBanner];
                      }];
 }
