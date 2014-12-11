@@ -29,7 +29,7 @@
 {
     CGRect bannerRect = self.adView.frame;
     
-    bannerRect.origin.x = (CGRectGetWidth(_adViewController.view.frame) - CGRectGetWidth(bannerRect))*0.5;
+    bannerRect.origin.x = (CGRectGetWidth(_adViewController.view.bounds) - CGRectGetWidth(bannerRect))*0.5;
     bannerRect.origin.y = _adViewController.view.bounds.size.height - bannerRect.size.height;
     self.adView.frame = bannerRect;
 }
