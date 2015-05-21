@@ -8,7 +8,7 @@
 
 #import "XADBannerHolder.h"
 
-#import "GADBannerView.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 @interface XADBannerHolder () <GADBannerViewDelegate>
 
@@ -57,7 +57,7 @@
 -(void)reload
 {
     GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    request.testDevices = [NSArray arrayWithObjects:kGADSimulatorID, nil];
     [_banner loadRequest:request];
 }
 
