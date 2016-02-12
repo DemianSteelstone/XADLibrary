@@ -85,6 +85,7 @@
             [self setFramesForLoadedBanner];
         else
             [self setFramesForNotLoadedBanner];
+        [_banner.superview bringSubviewToFront:_banner];
     }
 }
 
